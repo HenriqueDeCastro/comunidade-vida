@@ -1,79 +1,84 @@
 @use '@angular/material' as mat;
 @use '../../../assets/scss/theme.scss' as theme;
 
-.background-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.6)) , url('../../../assets/images/blue-church.jpg');
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.animation-fade-in {
-  animation: fadeIn 1s;
-  -webkit-animation: fadeIn 1s;
-  -moz-animation: fadeIn 1s;
-  -o-animation: fadeIn 1s;
-  -ms-animation: fadeIn 1s;
-
-  img {
-    width: 18rem;
+.opening {
+  &__background-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.6)) , url('../../../assets/images/blue-church.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
   }
-}
 
-.social-media {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  &__button {
-    background-color: rgba(255, 255, 255, 0.4);
-    padding: 0.75rem;
-    border-radius: 50%;
+  &__container {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 0.5rem;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  &__animation-fade-in {
+    animation: fadeIn 1s;
+    -webkit-animation: fadeIn 1s;
+    -moz-animation: fadeIn 1s;
+    -o-animation: fadeIn 1s;
+    -ms-animation: fadeIn 1s;
 
     img {
-      width: 1.25rem;
-      filter: invert(100%);
+      width: 18rem;
     }
   }
 
-  &__button:hover {
+  &__social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__button {
+      background-color: rgba(255, 255, 255, 0.4);
+      padding: 0.75rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 0.5rem;
+
+      img {
+        width: 1.25rem;
+        filter: invert(100%);
+      }
+    }
+
+    &__button:hover {
+      background-color: white;
+
+      img {
+        filter: invert(0%);
+      }
+    }
+  }
+
+  &__location-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem auto;
+    padding: 0.75rem 2rem;
+    text-transform: uppercase;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    gap: 0.6rem;
+    margin-top: 5rem;
+  }
+
+  .location-button:hover {
     background-color: white;
-
-    img {
-      filter: invert(0%);
-    }
+    color: mat.get-theme-color(theme.$comunidade-vida-theme, primary);
   }
-}
 
-.location-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 3rem auto;
-  padding: 0.75rem 2rem;
-  text-transform: uppercase;
-  background-color: transparent;
-  color: white;
-  border: 2px solid white;
-  gap: 0.6rem;
-  position: absolute;
-  margin-top: 80vh;
 }
-
-.location-button:hover {
-  background-color: white;
-  color: mat.get-theme-color(theme.$comunidade-vida-theme, primary);
-}
-
 
 @keyframes fadeIn {
   0% { opacity: 0; }
@@ -91,13 +96,19 @@
 }
 
 @media screen and (min-width: 768px) {
-  .animation-fade-in {
-    img {
-      width: 30rem;
+  .opening {
+    &__background-image {
+      background-attachment: fixed;
     }
-  }
 
-  .location-button {
-    display: none;
+    &__animation-fade-in {
+      img {
+        width: 30rem;
+      }
+    }
+
+    &__location-button {
+      display: none;
+    }
   }
 }

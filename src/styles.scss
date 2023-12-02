@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@use './assets/scss/theme.scss' as theme;
+@use './assets/scss/generics.scss' as generics;
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; letter-spacing: 3px; }
+
+section {
+  margin-bottom: 7.5rem;
+}
+
+h1, h2, h3 {
+  color: mat.get-theme-color(theme.$comunidade-vida-theme, primary);
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+

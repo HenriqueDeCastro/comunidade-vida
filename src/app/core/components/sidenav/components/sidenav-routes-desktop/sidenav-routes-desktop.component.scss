@@ -1,0 +1,21 @@
+@use '@angular/material' as mat;
+@use '../../../../../../assets/scss/theme.scss' as theme;
+
+.routes-desktop {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+
+  &__button {
+    margin: 0 1rem;
+    padding: 1rem 0;
+    border-bottom: 2px solid transparent;
+    height: 100%;
+  }
+
+  &__button:hover {
+    color: mat.get-theme-color(theme.$comunidade-vida-theme, warn);
+    border-bottom: 2px solid;
+  }
+}

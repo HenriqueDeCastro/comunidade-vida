@@ -27,9 +27,9 @@ export const scaleOut = animation([
 // =========================
 export const fadeIn = animation([
   style({ opacity: 0 }),
-  animate('{{time}}', style({ opacity: 1 }))
+  animate('{{time}}', style({ opacity: 1, bottom: 0 }))
 ]);
 
 export const fadeOut = animation([
-  animate('{{time}}', style({ opacity: 0 }))
+  animate('{{time}}', style({ opacity: 0, top: 0 }))
 ]);

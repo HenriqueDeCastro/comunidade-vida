@@ -4,13 +4,13 @@ import { CarouselComponent } from '../../../../shared/components/carousel/carous
 import { ICarouselSlide } from '../../../../shared/models';
 
 @Component({
-  selector: 'comunidade-vida-home-section-who-we-are',
+  selector: 'comunidade-vida-home-who-we-are',
   standalone: true,
   imports: [CommonModule, CarouselComponent],
-  templateUrl: './home-section-who-we-are.component.html',
-  styleUrl: './home-section-who-we-are.component.scss'
+  templateUrl: './home-who-we-are.component.html',
+  styleUrl: './home-who-we-are.component.scss'
 })
-export class HomeSectionWhoWeAreComponent {
+export class HomeWhoWeAreComponent {
   slides: ICarouselSlide[];
 
   constructor() {

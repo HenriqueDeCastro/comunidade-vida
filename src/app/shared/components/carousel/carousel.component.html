@@ -1,7 +1,7 @@
 <div class="carousel">
   @for (slide of slides; track $index) {
     @if($index === currentSlide) {
-      <img [src]="slide.src" [alt]="slide.alt" class="carousel__slide" @carouselAnimation/>
+      <img [src]="slide.src" [alt]="slide.alt" class="carousel__slide" @scaleAnimation/>
     }
   }
 

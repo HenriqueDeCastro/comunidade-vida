@@ -11,7 +11,7 @@ import { ICarouselSlide, scaleIn, scaleOut } from '../../models';
   templateUrl: './carousel.component.html',
   styleUrl: './carousel.component.scss',
   animations: [
-    trigger("carouselAnimation", [
+    trigger("scaleAnimation", [
       /* scale */
       transition("void => *", [useAnimation(scaleIn, {params: { time: '500ms' }} )]),
       transition("* => void", [useAnimation(scaleOut, {params: { time: '500ms' }})]),

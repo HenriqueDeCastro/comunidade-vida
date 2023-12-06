@@ -6,15 +6,20 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; letter-spacing: 3px; }
 
-p { letter-spacing: 2px; }
+p { letter-spacing: 2px; margin: 0; }
+
+button { letter-spacing: 3px; }
 
 section {
-  margin-bottom: 7.5rem;
+  margin-bottom: 6rem;
 }
 
 h1, h2, h3 {
   color: mat.get-theme-color(theme.$comunidade-vida-theme, primary);
   text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 3rem;
 }
 
 h3 {

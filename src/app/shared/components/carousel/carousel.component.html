@@ -1,0 +1,14 @@
+<div class="carousel">
+  @for (slide of slides; track $index) {
+    @if($index === currentSlide) {
+      <img [src]="slide.src" [alt]="slide.alt" class="carousel__slide" @carouselAnimation/>
+    }
+  }
+
+  <button class="carousel__control carousel__control--prev cursor" (click)="previousSlide()">
+    <mat-icon>arrow_back_ios_new</mat-icon>
+  </button>
+  <button class="carousel__control carousel__control--next cursor" (click)="nextSlide()">
+    <mat-icon>arrow_forward_ios_new</mat-icon>
+  </button>
+</div>

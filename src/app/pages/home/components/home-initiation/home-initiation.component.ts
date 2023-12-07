@@ -2,7 +2,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { transition, trigger, useAnimation } from '@angular/animations';
-import { fadeIn, fadeOut } from '../../../../shared/models';
+import { fadeIn, slideUp } from '../../../../shared/models';
 
 @Component({
   selector: 'comunidade-vida-home-initiation',
@@ -11,11 +11,12 @@ import { fadeIn, fadeOut } from '../../../../shared/models';
   templateUrl: './home-initiation.component.html',
   styleUrl: './home-initiation.component.scss',
   animations: [
-    trigger("carouselAnimation", [
-      /* scale */
-      transition("void => *", [useAnimation(fadeIn, {params: { time: '500ms' }} )]),
-      transition("* => void", [useAnimation(fadeOut, {params: { time: '500ms' }})]),
-    ])
+    trigger("fadeInAnimation", [
+      transition("void => *", [useAnimation(fadeIn, {params: { time: '800ms' }} )]),
+    ]),
+    trigger("slideUpAnimation", [
+      transition("void => *", [useAnimation(slideUp, {params: { time: '800ms' }} )]),
+    ]),
   ]
 })
 export class HomeInitiationComponent {

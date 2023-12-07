@@ -1,14 +1,20 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CarouselComponent } from '../../../../shared/components/carousel/carousel.component';
-import { ICarouselSlide } from '../../../../shared/models';
+import { ICarouselSlide, fadeLeft } from '../../../../shared/models';
+import { transition, trigger, useAnimation } from '@angular/animations';
 
 @Component({
   selector: 'comunidade-vida-home-who-we-are',
   standalone: true,
   imports: [CommonModule, CarouselComponent],
   templateUrl: './home-who-we-are.component.html',
-  styleUrl: './home-who-we-are.component.scss'
+  styleUrl: './home-who-we-are.component.scss',
+  animations: [
+    trigger("fadeInAnimation", [
+      transition("void => *", [useAnimation(fadeLeft, {params: { time: '800ms' }} )]),
+    ])
+  ]
 })
 export class HomeWhoWeAreComponent {
   slides: ICarouselSlide[];

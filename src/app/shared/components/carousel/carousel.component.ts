@@ -12,7 +12,6 @@ import { ICarouselSlide, scaleIn, scaleOut } from '../../models';
   styleUrl: './carousel.component.scss',
   animations: [
     trigger("scaleAnimation", [
-      /* scale */
       transition("void => *", [useAnimation(scaleIn, {params: { time: '500ms' }} )]),
       transition("* => void", [useAnimation(scaleOut, {params: { time: '500ms' }})]),
     ])
@@ -21,6 +20,7 @@ import { ICarouselSlide, scaleIn, scaleOut } from '../../models';
 export class CarouselComponent implements OnChanges {
   @Input() slides!: ICarouselSlide[];
   currentSlide: number;
+  timer!: ReturnType<typeof setTimeout>;
 
   constructor() {
     this.currentSlide = 0;
@@ -28,6 +28,7 @@ export class CarouselComponent implements OnChanges {
 
   ngOnChanges(): void {
     this.preloadImages();
+    this.loopSlide();
   }
 
   preloadImages(): void {
@@ -42,5 +43,11 @@ export class CarouselComponent implements OnChanges {
   nextSlide(): void {
     this.currentSlide++;
     this.currentSlide = (this.currentSlide === this.slides.length) ? 0 : this.currentSlide;
+    clearTimeout(this.timer);
+    this.loopSlide();
+  }
+
+  private loopSlide(): void {
+    this.timer = setTimeout(() => this.nextSlide(), 2000);
   }
 }

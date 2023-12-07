@@ -1,7 +1,7 @@
 <section class="initiation__bg-image" id="initiation">
-  <div class="initiation__container" @carouselAnimation>
-    <img class="initiation__logo" src="../../../assets/images/logo-white.png" alt="Logo Igreja Comunidade Vida"/>
-    <div class="initiation__social-media">
+  <div class="initiation__container">
+    <img class="initiation__logo" src="../../../assets/images/logo-white.png" alt="Logo Igreja Comunidade Vida" @fadeInAnimation/>
+    <div class="initiation__social-media" @fadeInAnimation>
       <a href="https://www.instagram.com/igrejacomvida" target="_blank" class="initiation__social-media__btn cursor">
         <img src="../../../assets/images/instagram.svg" alt="Instagram">
       </a>
@@ -12,7 +12,7 @@
         <img src="../../../assets/images/youtube.svg" alt="Youtube">
       </a>
     </div>
-     <button class="initiation__location-button cursor">
+     <button class="initiation__location-button cursor" @slideUpAnimation>
       <mat-icon>location_on</mat-icon>
       Onde Estamos
     </button>

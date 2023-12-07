@@ -1,5 +1,26 @@
+@use '@angular/material' as mat;
+@use '../../../../../assets/scss/theme.scss' as theme;
+
 .where-are-we {
   &__container {
+    &__text {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    &__btn-waze {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+      background: mat.get-theme-color(theme.$comunidade-vida-theme, primary);
+      color: white;
+      padding: 2rem;
+      text-decoration-line: none;
+      border-radius: 5px;
+      text-transform: uppercase;
+    }
+
     &__maps {
       width: 100vw;
       height: 20rem;

@@ -3,22 +3,54 @@
 
 .where-are-we {
   &__container {
-    &__text {
+    &__address {
       text-align: center;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
 
-    &__btn-waze {
+    &__worship-time {
+      text-align: center;
+      color: mat.get-theme-color(theme.$comunidade-vida-theme, warn);
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+
+    &__waze {
       display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-top: 1rem;
-      background: mat.get-theme-color(theme.$comunidade-vida-theme, primary);
-      color: white;
-      padding: 2rem;
-      text-decoration-line: none;
-      border-radius: 5px;
-      text-transform: uppercase;
+      justify-content: center;
+
+      &__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1rem;
+        background: mat.get-theme-color(theme.$comunidade-vida-theme, primary);
+        border: 1px solid mat.get-theme-color(theme.$comunidade-vida-theme, primary);
+        color: white;
+        padding: 0.75rem 2rem;
+        text-decoration-line: none;
+        border-radius: 5px;
+        text-transform: uppercase;
+
+        img {
+          width: 1.75rem;
+          filter: brightness(0) invert(1);
+        }
+
+        &:hover {
+          color: mat.get-theme-color(theme.$comunidade-vida-theme, primary);
+          background-color: transparent;
+
+          img {
+            filter: brightness(1) invert(0);
+          }
+        }
+
+        &:active {
+          transform: scale(1.025);
+        }
+      }
     }
 
     &__maps {
@@ -33,6 +65,10 @@
 @media screen and (min-width: 768px) {
   .where-are-we {
     &__container {
+      &__waze {
+        justify-content: flex-end;
+      }
+
       &__maps {
         width: 100%;
         border-radius: 5px;

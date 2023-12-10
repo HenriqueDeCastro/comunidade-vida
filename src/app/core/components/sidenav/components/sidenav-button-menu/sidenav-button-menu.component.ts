@@ -28,8 +28,8 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 })
 export class SidenavButtonMenuComponent {
   @Input() scrollAtTop: boolean;
+  @Input() isHamburguer: boolean;
   @Output() changed: EventEmitter<boolean>;
-  isHamburguer: boolean;
 
   constructor() {
     this.isHamburguer = true;
@@ -39,6 +39,5 @@ export class SidenavButtonMenuComponent {
 
   toggleIcon(): void {
     this.changed.emit(this.isHamburguer);
-    this.isHamburguer = !this.isHamburguer;
   }
 }

@@ -1,4 +1,6 @@
 .who-we-are {
+  scroll-margin-top: 4rem;
+
   &__container {
     display: flex;
     flex-direction: column;
@@ -17,6 +19,8 @@
 
 @media screen and (min-width: 992px) {
   .who-we-are {
+    scroll-margin-top: 5rem;
+
     &__container {
       flex-direction: row;
       justify-content: space-between;

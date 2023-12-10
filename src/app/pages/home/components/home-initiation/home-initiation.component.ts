@@ -2,7 +2,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { transition, trigger, useAnimation } from '@angular/animations';
-import { fadeIn, slideUp } from '../../../../shared/models';
+import { SectionsEnum, fadeIn, slideUp } from '../../../../shared/models';
 
 @Component({
   selector: 'comunidade-vida-home-initiation',
@@ -20,5 +20,9 @@ import { fadeIn, slideUp } from '../../../../shared/models';
   ]
 })
 export class HomeInitiationComponent {
+  sectionsEnum: typeof SectionsEnum;
 
+  constructor() {
+    this.sectionsEnum = SectionsEnum;
+  }
 }

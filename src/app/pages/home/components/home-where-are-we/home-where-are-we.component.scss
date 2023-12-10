@@ -2,6 +2,8 @@
 @use '../../../../../assets/scss/theme.scss' as theme;
 
 .where-are-we {
+  scroll-margin-top: 4rem;
+
   &__container {
     &__address {
       text-align: center;
@@ -64,6 +66,8 @@
 
 @media screen and (min-width: 768px) {
   .where-are-we {
+    scroll-margin-top: 5rem;
+
     &__container {
       &__waze {
         justify-content: flex-end;

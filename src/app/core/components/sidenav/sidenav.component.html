@@ -5,10 +5,11 @@
         <img src="../../../../assets/images/logo-reduced-colorful.png" alt="Logo Igreja Comunidade Vida">
       }
       @if (innerWidth < 768) {
-        <comunidade-vida-sidenav-button-menu class="toolbar__btn-menu" [scrollAtTop]="scrollAtTop" (changed)="toggleSidenav()">
+        <comunidade-vida-sidenav-button-menu class="toolbar__btn-menu"
+          [scrollAtTop]="scrollAtTop" [isHamburguer]="!this.sidenav.opened" (changed)="toggleSidenav()">
         </comunidade-vida-sidenav-button-menu>
       } @else {
-        <comunidade-vida-sidenav-routes-desktop class="toolbar__routes-desktop"></comunidade-vida-sidenav-routes-desktop>
+        <comunidade-vida-sidenav-routes class="toolbar__routes"></comunidade-vida-sidenav-routes>
       }
     </mat-toolbar-row>
   </mat-toolbar>
@@ -16,11 +17,13 @@
 
 <mat-sidenav-container>
   <mat-sidenav #sidenav [fixedInViewport]="true" mode="over">
-      <div class="sidenav-content"></div>
+      <div class="sidenav-content">
+        <comunidade-vida-sidenav-routes class="toolbar__routes" (closeSidenav)="toggleSidenav()"></comunidade-vida-sidenav-routes>
+      </div>
   </mat-sidenav>
   <mat-sidenav-content>
     <main>
-      <ng-content select="[body]"></ng-content>
+      <ng-content select="[main]"></ng-content>
     </main>
     <footer>
       <ng-content select="[footer]"></ng-content>

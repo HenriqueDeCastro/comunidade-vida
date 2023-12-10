@@ -12,5 +12,4 @@ import { HomeWhereAreWeComponent } from './components/home-where-are-we/home-whe
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-
 }

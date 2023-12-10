@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { SidenavButtonMenuComponent } from './components/sidenav-button-menu/sidenav-button-menu.component';
-import { SidenavRoutesDesktopComponent } from './components/sidenav-routes-desktop/sidenav-routes-desktop.component';
+import { SidenavRoutesComponent } from './components/sidenav-routes/sidenav-routes.component';
 
 @Component({
   selector: 'comunidade-vida-sidenav',
@@ -13,7 +13,7 @@ import { SidenavRoutesDesktopComponent } from './components/sidenav-routes-deskt
     MatToolbarModule,
     MatSidenavModule,
     SidenavButtonMenuComponent,
-    SidenavRoutesDesktopComponent
+    SidenavRoutesComponent
   ],
   templateUrl: './sidenav.component.html',
   styleUrl: './sidenav.component.scss',

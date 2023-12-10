@@ -6,6 +6,10 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; letter-spacing: 3px; }
 
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 p { letter-spacing: 2px; margin: 0; }
 
 button { letter-spacing: 3px; }

@@ -4,12 +4,14 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { SidenavButtonMenuComponent } from './components/sidenav-button-menu/sidenav-button-menu.component';
 import { SidenavRoutesComponent } from './components/sidenav-routes/sidenav-routes.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'comunidade-vida-sidenav',
   standalone: true,
   imports: [
     CommonModule,
+    RouterModule,
     MatToolbarModule,
     MatSidenavModule,
     SidenavButtonMenuComponent,
@@ -21,11 +23,13 @@ import { SidenavRoutesComponent } from './components/sidenav-routes/sidenav-rout
 export class SidenavComponent {
   scrollAtTop: boolean;
   innerWidth: number;
+  currentYear: string;
   @ViewChild('sidenav') sidenav!: MatSidenav;
 
   constructor() {
     this.scrollAtTop = true;
     this.innerWidth = window.innerWidth;
+    this.currentYear = new Date().getFullYear().toString();
   }
 
   @HostListener('window:resize', ['$event'])

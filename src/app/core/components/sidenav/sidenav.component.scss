@@ -32,8 +32,19 @@
 }
 
 .sidenav-content {
+  height: 100%;
   width: 100vw;
   margin-top: 4rem;
+
+  &__copyright {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    padding: 1rem 0px;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 0.6rem;
+  }
 }
 
 .mat-drawer-container {

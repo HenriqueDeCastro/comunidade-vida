@@ -22,6 +22,11 @@ import { SectionsEnum, fadeIn, slideUp } from '../../../../shared/models';
 export class HomeInitiationComponent {
   sectionsEnum: typeof SectionsEnum;
 
+  navigateSection(id: string): void {
+    const element = document.getElementById(id) as HTMLElement;
+    element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'center'});
+  }
+
   constructor() {
     this.sectionsEnum = SectionsEnum;
   }
